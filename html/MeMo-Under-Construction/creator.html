@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">MeMo | Under Construction</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Maven+Pro&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+<div id="socialBar">
+    <a href="" target="_blank"><img src="assets/icons/social/instagram-sketched.png" id="instaIcon"></a>
+    <a href="" target="_blank"><img src="assets/icons/social/facebook.png" id="faceIcon"></a>
+    <a href="" target="_blank"><img src="assets/icons/social/twitter.png" id="twitterIcon"></a>
+    <a href="" target="_blank"><img src="assets/icons/social/pinterest.png" id="pinIcon"></a>
+    <a href="" target="_blank"><img src="assets/icons/social/youtube.png" id="youtubeIcon"></a>
+    <a href="" target="_blank"><img src="assets/icons/social/linkedin.png" id="linkedinIcon"></a>
+</div>
+
+
+<div class="bg-home">
+
+    <div class="container-fluid">
+        <span class="text-home" id="firstTextSpan">
+            Under Construction
+        </span>
+        <div class="mb-30" style="margin-bottom: 100px;">
+            <div style="width: 100%; text-align: center">
+                <div class="center-text-ps">
+                    <span class="text-desc" id="descTextSpan">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-home contact-btn" id="contact">Contact</button>
+    </div>
+</div>
+
+
+<div class="contact display-none">
+    <div class="contact-box">
+        <div class="contact-frame">
+            <div class="close-btn" id="close">
+                X
+            </div>
+            <div id="inputArea">
+            <span class="text-home-contact" id="contactTextSpan">
+                 Contact with us!
+            </span>
+                <div class="input-style">
+                    <span class="contact-name" id="emailField">EMAIL</span>
+                    <input class="memo-input" id="email">
+
+                    <div id="errorArea" class="display-none">
+                        <p class="text-error" id="emailErrorField">
+                            Email is required!
+                        </p>
+                    </div>
+                </div>
+                <div class="btn-frame">
+                    <button class="btn-contact" id="send" onclick="sendMail()">SEND</button>
+                </div>
+            </div>
+
+
+            <div id="thanksArea" class="display-none">
+                <img src="assets/img/success.png" width="30"/>
+                <p class="text-home-contact" id="emailSuccessField">
+                    Thank you!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="editPanel">
+    <div id="normalSettingsMenu">
+        <h4 class="title-menu-settings">Settings</h4>
+        <p class="settings-link" onclick="function siteNameMenuSettings() {
+           $('#socialSettings ,#buttonSettings ,#inputSettings ,#normalSettingsMenu, #textSettings').css('display', 'none');
+           $('#siteNameSettings').css('display', 'block');
+        }
+        siteNameMenuSettings()">-Site Name</p>
+        <p class="settings-link" onclick="function openSocialMenuSettings() {
+           $('#siteNameSettings ,#buttonSettings ,#inputSettings ,#normalSettingsMenu, #textSettings').css('display', 'none');
+           $('#socialSettings').css('display', 'block');
+        }
+        openSocialMenuSettings()">-Social Icons</p>
+        <p class="settings-link" onclick="function openTextMenuSettings() {
+           $('#siteNameSettings ,#buttonSettings ,#inputSettings ,#normalSettingsMenu, #socialSettings').css('display', 'none');
+           $('#textSettings').css('display', 'block');
+        }
+        openTextMenuSettings()">-Texts</p>
+        <p class="settings-link" onclick="function openInputMenuSettings() {
+           $('#siteNameSettings ,#buttonSettings ,#textSettings ,#normalSettingsMenu, #socialSettings').css('display', 'none');
+           $('#inputSettings').css('display', 'block');
+        }
+        openInputMenuSettings()">-Inputs</p>
+        <p class="settings-link" onclick="function openButtonMenuSettings() {
+           $('#siteNameSettings ,#inputSettings ,#textSettings ,#normalSettingsMenu, #socialSettings').css('display', 'none');
+           $('#buttonSettings').css('display', 'block');
+        }
+        openButtonMenuSettings()">-Buttons</p>
+
+        <button class="btn btn-home contact-btn" id="publish">PUBLISH</button>
+
+    </div>
+
+    <div id="socialSettings" style="display: none;">
+        <p class="settings-link" onclick="backMenu()">-Back</p>
+        <input id="linkedinVal" placeholder="Linkedin">
+        <input id="faceVal" placeholder="Facebook">
+        <input id="twitVal" placeholder="Twitter">
+        <input id="instaVal" placeholder="Instagram">
+        <input id="pinVal" placeholder="Pinterest">
+        <input id="youtubeVal" placeholder="Youtube">
+        <button id="saveSocial">Save</button>
+    </div>
+
+    <div id="textSettings" style="display: none;">
+        <p class="settings-link" onclick="backMenu()">-Back</p>
+        <input id="firstText" placeholder="Under Construction">
+        <input id="descText"
+               placeholder="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur....">
+        <input id="contactText" placeholder="Contact with us!">
+        <button id="saveTexts">Save</button>
+    </div>
+
+    <div id="inputSettings" style="display: none;">
+        <p class="settings-link" onclick="backMenu()">-Back</p>
+        <input id="emailInput" placeholder="EMAIL">
+        <input id="emailErrorInput" placeholder="Email is required!">
+        <input id="emailSuccessInput" placeholder="Thank You!">
+        <button id="saveInputs">Save</button>
+    </div>
+
+    <div id="buttonSettings" style="display: none;">
+        <p class="settings-link" onclick="backMenu()">-Back</p>
+        <input id="contactButton" placeholder="Contact">
+        <input id="sendButton" placeholder="SEND">
+        <button id="saveButtons">Save</button>
+    </div>
+
+    <div id="siteNameSettings" style="display: none;">
+        <p class="settings-link" onclick="backMenu()">-Back</p>
+        <input id="siteNameText" placeholder="MeMo | Under...">
+        <button id="saveSiteName">Save</button>
+    </div>
+
+
+</div>
+
+</body>
+<script src="js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+<script src="js/creator-memo.js"></script>
+
+<script>
+    function backMenu() {
+        $('#normalSettingsMenu').css('display', 'block');
+        $('#siteNameSettings ,#buttonSettings, #socialSettings, #textSettings, #inputSettings').css('display', 'none');
+    }
+
+
+    function sendMail() {
+        var mail = $('#email').val();
+        if (mail === "" || mail === undefined) {
+            $('#errorArea').removeClass('display-none');
+        } else {
+            $('#errorArea').addClass('display-none');
+
+            $('#inputArea').addClass('display-none');
+            $('#thanksArea').removeClass('display-none');
+            /*
+            $.ajax({
+                type: 'POST',
+                url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+                data: {
+                    'key': 'YOUR API KEY HERE',
+                    'message': {
+                        'from_email': 'YOUR@EMAIL.HERE',
+                        'to': [
+                            {
+                                'email': mail,
+                                'type': 'to'
+                            }
+                        ],
+                        'autotext': 'true',
+                        'subject': mail,
+                    }
+                }
+            }).done(function (response) {
+                console.log(response); // if you're into that sorta thing
+                $('#inputArea').addClass('display-none');
+                $('#thanksArea').removeClass('display-none');
+            });*/
+        }
+    }
+</script>
+</html>
